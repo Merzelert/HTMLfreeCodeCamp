@@ -17,5 +17,29 @@ CREATE TABLE autores (
     pais_origen VARCHAR(40)
 );
 
+/*Agregando registros a nuestra tabla*/
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES (1, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES (2, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES (3, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES (4, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES (5, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');
 
 
+/*Agregando registros a nuestra tabla de otra forma*/
+
+INSERT INTO autores (autor_id, nombre, apellido, genero, fecha_nacimiento, pais_origen)
+VALUES  (1, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico'),
+        (2, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico'),
+        (3, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico'),
+        (4, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico'),
+        (5, 'Test autor', 'Test autor', 'M', '2018-01-30', 'Mexico');

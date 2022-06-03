@@ -2,6 +2,12 @@ iniciar mySQL
 /usr/local/mysql/bin/mysql -u root -p 
 password
 
+https://github.com/codigofacilito/curso_base_de_datos
+
+
+https://devhints.io/mysql
+
+
 Crear base de datos: CREATE DATABASE;
 Mostrar base de datos: SHOW DATABASES;
 Eliminar base de datos: DROP DATABASE nombreDeLaBase;
@@ -59,4 +65,157 @@ SHOW COLUMNS FROM nombreDeLaTabla; con este comando podemos ver las columnas
 DESC nombreDeLaTabla; con este comando podemos ver las columnas de una forma abreviada
 
 CREATE TABLE nombreNuevaTabla LIKE nombreDeLaTablaDeLaCualNosQueremosBasar;
+
+SELECT * FROM nombreDeLaTabla; visualizar registros 
+
+/usr/local/mysql/bin/mysql -u root -p libreria_cf -e "SELECT * FROM autores" /*Con este comando podemos entrar directamente a la base de datos con su respectivo nombre*/
+
+SOURCE Downloads/HTMLfree/sentencias_parte2.sql; despues de iniciar sesion se puede acceder a con este comando al archivo directamente 
+
+
+
+
+Implementación de restricciones
+VALORES ÚNICOS
+Como sabemos, si nosotros necesitamos validar valores únicos usaremos el constraint UNIQUE.
+
+CREATE TABLE usuarios( 
+  usuario_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(50) UNIQUE
+);
+Otra forma de expresarlo, es de la siguiente manera.
+
+CREATE TABLE usuarios( 
+  usuario_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(50),
+  CONSTRAINT UNIQUE (nombre)
+);
+La palabra CONSTRAINT es opcional, sin embargo, por temas de legibilidad recomiendo colocarla.
+
+VALORES MÚTIPLES COLUMNAS
+Si necesitamos validar el valor único de una combinación de columnas lo haremos de la siguiente manera.
+
+En este caso queremos validar que la combinación de nombre, apellido y matricula sean unicas en la tabla.
+
+CREATE TABLE usuarios( 
+  usuario_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(50),
+  apellido VARCHAR(50),
+  matricula VARCHAR(10),
+  CONSTRAINT unique_combinacion UNIQUE (nombre, apellido, matricula),
+  PRIMARY KEY (usuario_id)
+);
+LLAVES PRIMARIAS
+Existen un par de formas con las cuales nosotros podemos definir un campo como una llave primaria.
+
+CREATE TABLE usuarios( 
+  usuario_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
+);
+o
+
+CREATE TABLE usuarios( 
+  usuario_id INT UNSIGNED AUTO_INCREMENT,
+  PRIMARY KEY(usuario_id)
+);
+En ambos casos el resultado es el mismo.
+
+
+
+
+
+
+Modificar tablas
+Nosotros podemos modificar la definición de una tabla una vez esta se haya creado, para ello, nos apoyaremos de la sentencia ALTER TABLE.
+
+Aquí un listado de algunas modificaciones que podemos realizar (Las más comunes).
+
+Renombrar tabla.
+
+Renombrar la tabla usuarios por users.
+
+ALTER TABLE usuarios RENAME users;
+Agregar una nueva columna.
+
+Agregar a la tabla usuarios, la columna email de tipo VARCHAR con máximo de 50 caracteres.
+
+ALTER TABLE usuarios ADD email VARCHAR(50);
+Agregar una nueva columna con constraints.
+
+Agregar a la tabla usuarios, la columna email, validando su presencia.
+
+ALTER TABLE usuarios ADD email VARCHAR(50) NOT NULL DEFAULT '';
+Agregar a la tabla usuarios, la columna email, validando su valor único.
+
+ALTER TABLE tabla ADD columna VARCHAR(50) UNIQUE;
+Eliminar una columna
+
+Eliminar la columna email de la tabla usuarios.
+
+ALTER TABLE usuarios DROP COLUMN email;
+Modificar el tipo de dato de una columna
+
+Modificar el tipo de dato de la columna teléfono, (tabla usuarios) de INT a VARCHAR, máximo 50 caracteres.
+
+ALTER TABLE usuarios MODIFY telefono VARCHAR(50);
+Generar una llave primaria.
+
+Generar una llave primaria a la tabla usuarios.
+
+ALTER TABLE usuarios ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT, ADD PRIMARY KEY (id);
+Agregar llave foránea.
+
+Agregar una llave foranea a la tabla usuarios, con referencia a la tabla grupos.
+
+ALTER TABLE usuarios ADD FOREIGN KEY(grupo_id) REFERENCES grupos(grupo_id);
+Eliminar llaves foráneas
+
+Eliminar la llave foranea grupo_id de la tabla usuarios.
+
+ALTER TABLE usuarios DROP FOREIGN KEY grupo_id;
+
+
+
+SELECT * FROM nombreDeLaTabla\G; Obtener formato de carta 
+
+SELECT columna, columna FROM nombreDeLaTabla; Obtener solo las columnas que le indicamos
+
+SELECT * FROM nombreDeLaTabla WHERE nombreDeLaTabla = 'algun nombre'; filtro buscando 'algun nombre'
+
+SELECT columnas FROM nombreDeLaTabla WHERE condicion; filtros/condiciones 
+
+Operadores logicos 
+
+SELECT columnas FROM nombreDeLaTabla WHERE condicion AND condicion; condiciones (nombreDeLaTabla = 'algun nombre')
+
+SELECT columnas FROM nombreDeLaTabla WHERE condicion OR condicion; condiciones (nombreDeLaTabla = 'algun nombre')
+
+SELECT columnas FROM nombreDeLaTabla WHERE condicion NOT condicion; condiciones (nombreDeLaTabla = 'algun nombre')
+
+SELECT columnas, columnas... FROM nombreDeLaTabla WHERE columna BETWEEN 'condiciones' AND 'condiciones'; filtro entre dos condiciones 
+
+SELECT*FROM libros WHERE titulo="Ojos de fuego" OR
+                           titulo="Cujo" OR 
+                           titulo="El hobbit" OR
+                           titulo="La torre oscura7 La torre oscura";
+
+busqueda de varios titulos.
+
+SELECT * FROM libros WHERE titulo IN (); entre parentesis agregamos todo lo que queremos buscar separado con comillas y entre ''.
+
+Ejemplo
+SELECT * FROM Libros WHERE titulo IN ('Ojos de fuego', 'Cujo', 'El hobbit', 'La torre oscura 7 La torre oscura');
+
+UPDATE table1 SET field1=new_value1 WHERE condition; para actualizar tablas 
+
+Ejemplo
+UPDATE libros SET paginas=100 WHERE libro_id=2; cambiamos las paginas de NULL a 100 en el libro_id = 2
+
+DELETE FROM table1 WHERE condition; para eliminar registros de la tabla 
+
+TRUNCATE table1; para eliminar toda la tabla
+
+
+
+
+
 
