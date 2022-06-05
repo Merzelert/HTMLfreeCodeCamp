@@ -19,7 +19,7 @@ h2 {
 }
 
 hr {
-    height: 3px;
+    height: 2px;
     background-color: coral;
     border-color: coral;
 }
@@ -37,8 +37,8 @@ hr {
 }
 
 .imagen {
-    width: 50px;
-    padding: 20px;
+    margin: auto;
+    opacity: 1;
 }
 
 .servicio {
