@@ -13,10 +13,12 @@ body {background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/
 
 .servicio {
     text-align: left;
+    width: 50%;
 }
 
 .precio {
     text-align: right;
+    width: 50%;
 }
 
 .item p {
