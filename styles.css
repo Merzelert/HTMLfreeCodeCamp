@@ -4,6 +4,7 @@ h1, h2, p {
 body {
     background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/02/cacadas-de-agua-azul.jpg);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
 }
 
 h1, h2 {
@@ -53,5 +54,7 @@ hr {
 
 .item p {
     display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
