@@ -11,3 +11,15 @@ body {background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/
     margin-right: auto;
 }
 
+.servicio {
+    text-align: left;
+}
+
+.precio {
+    text-align: right;
+}
+
+.item p {
+    display: inline-block;
+}
+
