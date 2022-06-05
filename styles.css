@@ -1,16 +1,44 @@
 h1, h2, p {
     text-align: center;
 }
-body {background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/02/cacadas-de-agua-azul.jpg);
+body {
+    background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/02/cacadas-de-agua-azul.jpg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+hr {
+    height: 3px;
+    background-color: coral;
+    border-color: coral;
 }
 
 .principal {
     width: 80%;
+    max-width: 500px;
     background-color: antiquewhite;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.imagen {
+    width: 50px;
+    padding: 20px;
 }
 
 .servicio {
