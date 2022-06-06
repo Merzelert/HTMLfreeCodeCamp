@@ -103,3 +103,7 @@ a:hover {
 a:active {
     color: whitesmoke;
 }
+
+.derechos {
+    margin-bottom: 5px;
+}
