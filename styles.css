@@ -92,3 +92,11 @@ footer {
 a:visited {
     color: gray;
 }
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: whitesmoke;
+}
