@@ -1,4 +1,4 @@
-h1, h2, p {
+h1, h2, h3, p {
     text-align: center;
 }
 body {
@@ -9,7 +9,7 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -20,7 +20,9 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 hr {
@@ -79,6 +81,10 @@ section {
     padding-bottom: 20px;
 }
 
+label{
+    display: block;
+    margin: auto;
+}
 /* FOOTER */
 
 footer {
