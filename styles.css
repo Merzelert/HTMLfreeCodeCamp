@@ -50,7 +50,7 @@ hr {
 img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(10px 10px 20px black);
+    margin: 0 auto;
 }
 
 .servicio {
