@@ -2,7 +2,7 @@ h1, h2, h3, p {
     text-align: center;
 }
 body {
-    background-image: url(https://mexicorutamagica.mx/wp-content/uploads/2021/02/cacadas-de-agua-azul.jpg);
+    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,7 +38,7 @@ hr {
 .principal {
     width: 80%;
     max-width: 500px;
-    background: linear-gradient(rgb(220, 74, 74), blue);
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -73,7 +73,7 @@ img {
 section {
     width: 80%;
     max-width: 500px;
-    background: linear-gradient(90deg, rgb(220, 74, 74), white, blue);
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
     box-shadow: 15px 15px 15px 1px black;
     opacity: 0.9;
     margin-left: auto;
