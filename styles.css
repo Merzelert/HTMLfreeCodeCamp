@@ -31,8 +31,8 @@ h3:last-of-type{
 
 hr {
     height: 2px;
-    background-color: black;
-    border-color: black;
+    background-color: mediumvioletred;
+    border-color: mediumaquamarine;
 }
 
 .principal {
